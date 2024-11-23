@@ -5,4 +5,21 @@
 
 {% block content %}
     <h1>Scoala General</h1>
+
+    <form id="alegeClasaForm" method="post">
+        {% csrf_token %}
+        <select name="clasa" onchange="submitClasa()" class="form-select" aria-label=".form-select">
+            <option selected>Alege Clasa</option>
+            {% for clasa in toateClasele  %}
+                <option value="{{ clasa.id }}">{{ clasa }}</option>
+            {% endfor %}
+        </select>
+        <!-- <input type="submit" value="Submit" class="btn btn-primary"> -->
+    </form>
+
+    <script>
+        function submitClasa() {
+            document.getElementById("alegeClasaForm").submit();
+        }
+    </script>
 {% endblock content %}

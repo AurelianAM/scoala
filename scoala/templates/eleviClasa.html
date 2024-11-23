@@ -1,0 +1,30 @@
+{% extends "scoalaGeneral.html" %}
+{% load static %}
+
+{% block title %}Fondul Clasei - Scoala{% endblock title %}
+
+{% block content %}
+    <h1>Elevi</h1>
+
+    <div class="table-responsive-sm col-sm-7">
+        <table class="table table-sm table-hover table-borderless align-middle">
+            <thead class="table-sm">
+                <tr>
+                    <th>Nume</th>
+                    <th>Prenume</th>
+                    <th>Rest de plata</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for elev in eleviDinClasa %}
+                <tr class="medicRecord record">
+                    <td class = "numeElev">{{ elev.nume}}</td>
+                    <td class = "prenumeElev">{{ elev.prenume }}</td>
+                    <td class = "restDePlataElev">{{ elev.restDePlata }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock content %}

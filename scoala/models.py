@@ -28,11 +28,12 @@ class Elev(models.Model):
     id = models.AutoField(primary_key=True)
     nume = models.CharField(max_length=50)
     prenume = models.CharField(max_length=100)
+    contributie = models.DecimalField( max_digits=7, decimal_places=2, default=0)
     restDePlata = models.DecimalField( max_digits=7, decimal_places=2, default=0)
     clasa = models.ForeignKey(Clasa, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return f"{self.nume} {self.prenume}"
+        return f"{self.nume} | {self.prenume} | {self.contributie} lei | {self.restDePlata} lei | {self.clasa}"
 
 class AnScolar(models.Model):
     id = models.AutoField(primary_key=True)
