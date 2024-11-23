@@ -4,7 +4,10 @@
 {% block title %}Fondul Clasei - Scoala{% endblock title %}
 
 {% block content %}
-    <h1>Elevi</h1>
+
+    <div class="alert alert-info" role="alert">
+        {{ clasa }} Fond disponibil: <mark>{{ clasa.fond }} lei</mark>
+    </div>
 
     <div class="table-responsive-sm col-sm-7">
         <table class="table table-sm table-hover table-borderless align-middle">

@@ -40,9 +40,12 @@ def fondRateAfterSave(sender, instance, created, **kwargs):
 def incasareAfterSave(sender, instance, created, **kwargs):
     if not instance.is_applied:
         elev = instance.elev
+        clasa = elev.clasa
         elev.restDePlata -= instance.suma
         elev.contributie += instance.suma
+        clasa.fond += instance.suma
         elev.save()
+        clasa.save()
         instance.is_applied = True
         instance.save()
 
