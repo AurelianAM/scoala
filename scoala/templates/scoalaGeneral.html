@@ -6,7 +6,7 @@
 {% block content %}
     <h1>Scoala General</h1>
 
-    <form id="alegeClasaForm" method="post">
+    <form id="alegeClasaForm" method="post" class="form-floating">
         {% csrf_token %}
         <select name="clasa" onchange="submitClasa()" class="form-select" aria-label=".form-select">
             <option selected>Alege Clasa</option>
