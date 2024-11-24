@@ -10,6 +10,9 @@ class Profesor(models.Model):
     nume = models.CharField(max_length=50)
     prenume = models.CharField(max_length=100)
 
+    class Meta:
+        verbose_name_plural = "Profesori"
+
     def __str__(self):
         return f"{self.nume} {self.prenume}"
 
@@ -20,6 +23,9 @@ class Clasa(models.Model):
     litera = models.CharField(max_length=1)
     fond = models.DecimalField( max_digits=7, decimal_places=2, default=0)
     profesor = models.ForeignKey(Profesor, on_delete=models.SET_NULL, null=True)
+
+    class Meta:
+        verbose_name_plural = "Clase"
 
     def __str__(self):
         return f"{self.an} {self.litera} - {self.profesor}"
@@ -34,6 +40,8 @@ class Elev(models.Model):
     
     class Meta:
         ordering = ["nume", "prenume"]
+        verbose_name_plural = "Elevi"
+
     def __str__(self):
         return f"{self.nume} | {self.prenume} | {self.contributie} lei | {self.restDePlata} lei | {self.clasa}"
 
@@ -41,6 +49,9 @@ class AnScolar(models.Model):
     id = models.AutoField(primary_key=True)
     anStart = models.IntegerField(default=datetime.now().year)
     anFinal = models.IntegerField(default=datetime.now().year + 1)
+
+    class Meta:
+        verbose_name_plural = "Ani Scolari"
 
     def __str__(self):
         return f"Anul {self.anStart} - {self.anFinal}"

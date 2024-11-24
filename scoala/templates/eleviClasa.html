@@ -20,11 +20,13 @@
             </thead>
             <tbody class="table-group-divider">
                 {% for elev in eleviDinClasa %}
-                <tr class="medicRecord record">
-                    <td class = "numeElev">{{ elev.nume}}</td>
-                    <td class = "prenumeElev">{{ elev.prenume }}</td>
-                    <td class = "restDePlataElev">{{ elev.restDePlata }}</td>
-                </tr>
+                    {% if elev.restDePlata > 0 %}
+                        <tr class="elevRecord record">
+                            <td class = "numeElev">{{ elev.nume}}</td>
+                            <td class = "prenumeElev">{{ elev.prenume }}</td>
+                            <td class = "restDePlataElev">{{ elev.restDePlata }}</td>
+                        </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>
         </table>

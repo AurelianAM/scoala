@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-tv#aayft3b4coe7s_0z%jap+rh=gkkuo3052utr0&2vlnsfx%$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

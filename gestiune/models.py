@@ -14,6 +14,9 @@ class FondRate(models.Model):
     is_active = models.BooleanField(default=True)
     is_applied = models.BooleanField(default=False)
 
+    class Meta:
+        verbose_name_plural = "Fonduri de rate"
+
     def __str__(self):
         return f'{self.anScolar} {self.clasa} {self.suma}lei'
 
@@ -23,6 +26,9 @@ class Incasare(models.Model):
     suma = models.DecimalField(max_digits=7, decimal_places=2, default=0)
     created = models.DateTimeField(auto_now=True)
     is_applied = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name_plural = "Incasari"
 
     def __str__(self):
         return f'{self.elev.nume} {self.elev.prenume} a platit {self.suma} lei procesat = {self.is_applied}'
@@ -35,6 +41,9 @@ class IncasareDiversa(models.Model):
     created = models.DateTimeField(auto_now=True)
     is_applied = models.BooleanField(default=False)
 
+    class Meta:
+        verbose_name_plural = "Incasari Diverse"
+
     def __str__(self):
         return f'{self.created} - {self.suma} lei - {self.detalii} = {self.is_applied}'
 
@@ -45,6 +54,9 @@ class Cheltuiala(models.Model):
     detalii = models.TextField()
     created = models.DateTimeField(auto_now=True)
     is_applied = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name_plural = "Cheltuieli Diverse"
 
     def __str__(self):
         return f'{self.created} - {self.suma} lei - {self.detalii} = {self.is_applied}'
