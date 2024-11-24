@@ -31,7 +31,9 @@ class Elev(models.Model):
     contributie = models.DecimalField( max_digits=7, decimal_places=2, default=0)
     restDePlata = models.DecimalField( max_digits=7, decimal_places=2, default=0)
     clasa = models.ForeignKey(Clasa, on_delete=models.SET_NULL, null=True)
-
+    
+    class Meta:
+        ordering = ["nume", "prenume"]
     def __str__(self):
         return f"{self.nume} | {self.prenume} | {self.contributie} lei | {self.restDePlata} lei | {self.clasa}"
 
