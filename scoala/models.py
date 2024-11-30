@@ -23,6 +23,7 @@ class Clasa(models.Model):
     litera = models.CharField(max_length=1)
     fond = models.DecimalField( max_digits=7, decimal_places=2, default=0)
     profesor = models.ForeignKey(Profesor, on_delete=models.SET_NULL, null=True)
+    logo = models.ImageField(upload_to='static/images/', null=True, blank=True)
 
     class Meta:
         verbose_name_plural = "Clase"

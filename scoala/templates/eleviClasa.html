@@ -3,6 +3,16 @@
 
 {% block title %}Fondul Clasei - Scoala{% endblock title %}
 
+{% block css %}
+    <style>
+        .mainContent {
+            background-image: url("{{ clasa.logo.url }}");
+            height: 85vh;
+        }
+        .table_custom { --bs-table-bg: transparent !important; }
+    </style>
+{% endblock css %}
+
 {% block content %}
 
     <div class="alert alert-info" role="alert">
@@ -10,7 +20,7 @@
     </div>
 
     <div class="table-responsive-sm col-sm-7">
-        <table class="table table-sm table-hover table-borderless align-middle">
+        <table class="table table-sm table-hover table-borderless align-middle table_custom">
             <thead class="table-sm">
                 <tr>
                     <th>Nume</th>
