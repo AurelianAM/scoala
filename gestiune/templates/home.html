@@ -4,8 +4,32 @@
 {% block title %}Fondul Clasei - Home{% endblock title %}
 
 {% block content %}
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+
+    <div class="table-responsive-sm col-sm-7">
+        <table class="table table-sm table-hover table-borderless align-middle">
+            <thead class="table-sm">
+                <tr>
+                    <th>Logo</th>
+                    <th>Clasa</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for clasa in toateClasele %}
+                    <tr class="clasaRecord record">
+                        <td class = "logoClasa">
+                            <img style="height: 100px;" src="{{ clasa.logo.url }}" class="rounded" alt=""/>
+                        </td>
+                        <td class = "descriereClasa">{{ clasa }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+
         <img src="{% static 'images/logo.png' %}" class="img-fluid" alt="Fondul Clasei logo"/>
         <p class="lead">Clasa pregatitoare A - Fluturasii</p>
-    </div>
+    </div> -->
 {% endblock content %}
